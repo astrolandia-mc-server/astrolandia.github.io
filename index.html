@@ -1,0 +1,303 @@
+<!--
+    RujuxMC Free Ocean Minecraft Template
+
+    This template is completely free and will remain free forever.
+    It is developed by Jallox from the SmartsHub Team. SmartsHub reserves
+    the right to take any necessary action to protect this resource.
+
+    You are NOT allowed to resell or redistribute this resource — including
+    any modified version — without explicit permission from the SmartsHub Team.
+
+    This web template is distributed under the BuiltByBit.com domain.
+
+    Thank you for using the RujuxMC Free Ocean Minecraft Template.
+    If possible, please keep this notice at the top of your index.html file.
+    It helps us a lot and prevents misunderstandings with users.
+
+    — The SmartsHub Team
+
+    Support: https://discord.smartshub.dev/
+    More resources: https://store.smartshub.dev/
+
+    (c) SmartsHub 2025
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroLandia.pl - Najlepszy serwer na twojej liście</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+
+                        'marine-dark': '#0f172a',
+                        'marine-medium': '#1e293b',
+                        'marine-light': '#334155',
+                        'marine-accent': '#0ea5e9',
+                        'text-light': '#f8fafc',
+                        'text-dark': '#cbd5e1',
+                        'marine-darker': '#0a101e',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            background-image: url('background3.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: background-image 1s ease-in-out;
+        }
+
+        .overlay {
+            background-color: rgba(15, 23, 42, 0.7);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .nav-button {
+            @apply border-marine-light backdrop-blur-sm bg-opacity-80;
+            padding-left: 26px;
+            padding-right: 26px;
+            padding-bottom: 13px;
+            padding-top: 13px;
+            border-radius: 100px;
+        }
+
+        .nav-button-secondary {
+            @apply bg-marine-dark bg-marine-medium hover:bg-marine-darker;
+        }
+
+        .nav-button-primary {
+            @apply bg-marine-accent hover:bg-sky-600 transform hover:scale-105 active:scale-95;
+        }
+
+        .clickable-text-copy {
+            @apply cursor-pointer hover:text-marine-accent transition-colors duration-200;
+        }
+
+        .social-icon {
+            @apply w-10 h-10 flex items-center justify-center rounded-full bg-marine-medium hover:bg-marine-darker transition-colors duration-300 shadow-md;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <main class="flex-grow flex items-center justify-center p-4">
+            <div class="flex flex-col items-center space-y-8 max-w-5xl w-full">
+
+                <!-- Navigation -->
+                <nav class="flex flex-wrap justify-center gap-4 mt-8 mb-40">
+                    
+                    <a href="#" class="nav-button nav-button-secondary bg-marine-dark border-[1px] border-marine-light backdrop-blur-sm bg-opacity-80">Zagłosuj!</a>
+                    <a href="https://astrolandia.gitbook.io/regulamin//" class="nav-button nav-button-secondary bg-marine-dark border-[1px] border-marine-light backdrop-blur-sm bg-opacity-80">Zasady i taryfikator</a>
+                    <a href="https://vishop.pl/shop/27518" target="_blank" rel="noopener noreferrer"
+                        class="nav-button nav-button-primary bg-marine-dark border-[1px] border-marine-light backdrop-blur-sm bg-opacity-80">Sklep</a>
+                    <a href="staff.html" class="nav-button nav-button-secondary bg-marine-dark border-[1px] border-marine-light backdrop-blur-sm bg-opacity-80">Administracja</a>
+                    <a href="#" class="nav-button nav-button-secondary bg-marine-dark border-[1px] border-marine-light backdrop-blur-sm bg-opacity-80">Zagłosuj!</a>
+                    
+                </nav>
+
+                <div
+                    class="grid grid-cols-1 xl:grid-cols-3 items-center text-center gap-y-12 xl:gap-x-24 w-full px-4 mb-8">
+                    <!-- Players -->
+                    <div class="flex flex-col items-center space-y-2">
+                        <span id="playerCount" class="text-4xl xl:text-5xl font-bold text-marine-accent">0/0</span>
+                        <span class="text-text-light text-xl">Online:</span>
+                        <span id="minecraftIpText" class="text-text-dark text-lg clickable-text-copy"
+                            onclick="copyToClipboard(this.textContent, 'Server ip copied to clipboard:')">AstroLandia.pl</span>
+                    </div>
+
+                    <!-- Logo -->
+                    <div class="flex justify-center mb-[30px]">
+                        <img src="logo3.png" alt="Server Logo"
+                            class="rounded-lg shadow-inner">
+                    </div>
+
+                    <!-- Discord -->
+                    <div class="flex flex-col items-center space-y-2">
+                        <span id="discordUsersCount" class="text-4xl xl:text-5xl font-bold text-marine-accent">0</span>
+                        <span class="text-text-light text-xl">Użytkownicy Discord:</span>
+                        <span id="discordLinkText" class="text-text-dark text-lg clickable-text-copy"
+                            onclick="copyToClipboard(this.textContent, 'Discord url copied:')">dc.astrolandia.pl</span>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Social Media -->
+                <div class="flex justify-center gap-4 mt-8">
+                     <a href="https://dc.astrolandia.pl" target="_blank" rel="noreferrer"
+                        class="social-icon">
+                        <!-- Discord icon SVG -->
+                        <svg class="w-10 h-10 text-text-light" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+
+                        </svg>
+                    </a>
+                    
+                   
+                    <a href="https://www.tiktok.com/@lunarcraft.serwer" target="_blank" rel="noopener noreferrer"
+                        class="social-icon">
+                        <!-- TikTok icon SVG -->
+                        <svg class="w-10 h-10 text-text-light" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UC1v9dJZ-DXhfNH5YSqVSe6w" target="_blank" rel="noopener noreferrer"
+                        class="social-icon">
+                        <!-- YouTube icon SVG -->
+                        <svg class="w-10 h-10 text-text-light" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+
+                        </svg>
+                    </a>
+                    
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer
+            class="p-4 xl:p-6 bg-marine-dark text-text-dark text-center text-sm rounded-t-xl mx-auto w-full max-w-7xl mb-4 border-t border-marine-light backdrop-blur-sm bg-opacity-80">
+            <p></bold>...</bold></p>
+            <p class="mt-2"></bold>.....
+                </bold>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Background changing script -->
+    <!-- 
+        Make sure all the images has the same aspect ratio (16:9 recommended)
+        Add your background images in the "backgrounds" array below
+
+        If you want to disable the background changing feature, remove this script
+        or comment it out.
+    -->
+    <script>
+        const backgrounds = [
+            'background3.jpg',
+            // Add more backgrounds as needed,
+        ];
+
+        let currentIndex = 0;
+        const body = document.body;
+
+        function changeBackground() {
+            currentIndex = (currentIndex + 1) % backgrounds.length;
+            body.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+        }
+
+        setInterval(changeBackground, 15000);
+    </script>
+    <script>
+        function copyToClipboard(text, message) {
+
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            textArea.style.top = "-9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                const msg = successful ? 'Copied' : 'Error copying';
+                showNotification(message + " " + msg);
+            } catch (err) {
+                showNotification('Error al copiar: ' + err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #0ea5e9; /* marine-accent */
+                color: #f8fafc; /* text-light */
+                padding: 12px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            `;
+            document.body.appendChild(notification);
+
+
+            setTimeout(() => {
+                notification.style.opacity = '1';
+            }, 10);
+
+
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.addEventListener('transitionend', () => notification.remove());
+            }, 3000);
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Player Count
+            await fetch('https://api.mcstatus.io/v2/status/java/astrolandia.pl')
+                .then(res => res.json())
+                .then(data => {
+                    const online = data.players.online;
+                    const max = data.players.max;
+                    document.getElementById('playerCount').textContent = `${online}/${max}`;
+                })
+                .catch(() => {
+                    document.getElementById('playerCount').textContent = `0/0`;
+                });
+
+            // Discord Users Count
+            await fetch('https://discord.com/api/guilds/1484236784014590047/widget.json')
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('discordUsersCount').textContent = data.presence_count;
+                })
+                .catch(() => {
+                    document.getElementById('discordUsersCount').textContent = `0`;
+                });
+        });
+    </script>
+</body>
+
+</html>
